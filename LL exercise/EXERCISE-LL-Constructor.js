@@ -1,17 +1,16 @@
-// WRITE NODE CLASS HERE //
-//                       //
-//                       //
-//                       //
-//                       //
-///////////////////////////
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
+    }
+}
 
 class LinkedList {
-    // WRITE LL CONSTRUCTOR HERE //
-    //                           //
-    //                           //
-    //                           //
-    //                           //
-    ///////////////////////////////
+    constructor(value) {
+        let newNode = new Node(value);
+        this.head = newNode;
+        this.tail = newNode;
+    }
 
     printList() {
         let temp = this.head;
