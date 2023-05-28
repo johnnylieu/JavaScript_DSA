@@ -1,10 +1,10 @@
 class Node {
-    constructor(value){
+    constructor(value) {
         this.value = value;
         this.next = null;
     }
 }
- 
+
 class LinkedList {
     constructor(value) {
         const newNode = new Node(value);
@@ -46,7 +46,7 @@ class LinkedList {
         this.tail = null;
         this.length = 0;
     }
- 
+
     push(value) {
         const newNode = new Node(value);
         if (!this.head) {
@@ -59,18 +59,31 @@ class LinkedList {
         this.length++;
         return this;
     }
- 
-	/// WRITE POP METHOD HERE ///
-	//                         //
-	//                         //
-	//                         //
-	//                         //
-	/////////////////////////////
-     
- }
- 
 
- function test() {
+    pop() {
+        if (this.length === 0) return undefined;
+
+        let holder = this.head;
+        let pre = this.head;
+
+        while (holder.next) {
+            pre = holder;
+            holder = holder.next;
+        }
+
+        this.length--;
+        this.tail = pre;
+        this.tail.next = null;
+
+        if (this.length === 0) {
+            this.head = null;
+            this.tail = null;
+        }
+        return holder;
+    }
+}
+
+function test() {
     let myLinkedList = new LinkedList(1);
     myLinkedList.push(2);
 
@@ -94,11 +107,9 @@ class LinkedList {
     } else {
         console.log("null");
     }
- }
+}
 
-
- test();
-
+test();
 
 /*
     EXPECTED OUTPUT:
