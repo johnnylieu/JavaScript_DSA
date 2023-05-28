@@ -10,6 +10,7 @@ class LinkedList {
         let newNode = new Node(value);
         this.head = newNode;
         this.tail = newNode;
+        this.length = 1;
     }
 
     printList() {
