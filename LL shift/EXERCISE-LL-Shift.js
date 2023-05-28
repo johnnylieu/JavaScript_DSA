@@ -96,6 +96,7 @@ class LinkedList {
             return null;
         } else {
             let newHead = this.head.next;
+            console.log(newHead);
             let head = this.head;
             this.length--;
             this.head = null;
