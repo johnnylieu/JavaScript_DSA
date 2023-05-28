@@ -94,11 +94,6 @@ class LinkedList {
     shift() {
         if (this.length === 0) {
             return null;
-        } else if (this.legnth === 1) {
-            this.length--;
-            this.head = null;
-            this.tail = null;
-            return this.head;
         } else {
             let newHead = this.head.next;
             let head = this.head;
