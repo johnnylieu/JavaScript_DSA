@@ -93,6 +93,7 @@ class LinkedList {
 
             this.head = newEl;
             this.length++;
+            return this;
         }
     }
 }
