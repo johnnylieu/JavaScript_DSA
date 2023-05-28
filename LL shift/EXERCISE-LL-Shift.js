@@ -1,10 +1,10 @@
 class Node {
-    constructor(value){
+    constructor(value) {
         this.value = value;
         this.next = null;
     }
 }
- 
+
 class LinkedList {
     constructor(value) {
         const newNode = new Node(value);
@@ -46,7 +46,7 @@ class LinkedList {
         this.tail = null;
         this.length = 0;
     }
- 
+
     push(value) {
         const newNode = new Node(value);
         if (!this.head) {
@@ -59,7 +59,7 @@ class LinkedList {
         this.length++;
         return this;
     }
- 
+
     pop() {
         if (this.length === 0) return undefined;
         let temp = this.head;
@@ -77,7 +77,7 @@ class LinkedList {
         }
         return temp;
     }
- 
+
     unshift(value) {
         const newNode = new Node(value);
         if (!this.head) {
@@ -90,20 +90,29 @@ class LinkedList {
         this.length++;
         return this;
     }
- 
-	/// WRITE SHIFT METHOD HERE ///
-	//                           //
-	//                           //
-	//                           //
-	//                           //
-	///////////////////////////////
- 
- }
- 
 
- function test() {
-    let myLinkedList = new LinkedList(2)
-    myLinkedList.push(1)
+    shift() {
+        if (this.length === 0) {
+            return null;
+        } else if (this.legnth === 1) {
+            this.length--;
+            this.head = null;
+            this.tail = null;
+            return this.head;
+        } else {
+            let newHead = this.head.next;
+            let head = this.head;
+            this.length--;
+            this.head = null;
+            this.head = newHead;
+            return head;
+        }
+    }
+}
+
+function test() {
+    let myLinkedList = new LinkedList(2);
+    myLinkedList.push(1);
 
     // (2) Items in LL - Returns 2 Node
     if (myLinkedList.length !== 0) {
@@ -124,12 +133,10 @@ class LinkedList {
         console.log(myLinkedList.shift().value);
     } else {
         console.log("null");
-    }    
- }
+    }
+}
 
-
- test();
-
+test();
 
 /*
     EXPECTED OUTPUT:
