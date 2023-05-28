@@ -11,3 +11,7 @@ https://youtu.be/fl_VuMZ-jRU
 ## Linked List Pop Exercise
 
 https://youtu.be/BPSE5h-vcy4
+
+## Linked List Unshift Exercise
+
+https://youtu.be/l2dnbme61Jc
