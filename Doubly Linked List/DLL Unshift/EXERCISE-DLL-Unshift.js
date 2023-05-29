@@ -1,11 +1,11 @@
 class Node {
-    constructor(value){
+    constructor(value) {
         this.value = value;
         this.next = null;
         this.prev = null;
     }
 }
- 
+
 class DoublyLinkedList {
     constructor(value) {
         const newNode = new Node(value);
@@ -47,8 +47,8 @@ class DoublyLinkedList {
         this.tail = null;
         this.length = 0;
     }
- 
-    push(value){
+
+    push(value) {
         const newNode = new Node(value);
         if (this.length === 0) {
             this.head = newNode;
@@ -77,15 +77,27 @@ class DoublyLinkedList {
         return temp;
     }
 
-	/// WRITE UNSHIFT METHOD HERE ///
-	//                             //
-	//                             //
-	//                             //
-	//                             //
-	/////////////////////////////////
-
+    unshift(value) {
+        // creating a new node with value the user provided
+        const newNode = new Node(value);
+        // if length is zero then head and tail will point to the new node that is added
+        if (this.length === 0) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            // using temp as a placeholder for the current head
+            let temp = this.head;
+            // setting current head to new node
+            this.head = newNode;
+            // making new node's next point to the node that used to be head
+            newNode.next = temp;
+            // pointing the old node's prev to the new node
+            temp.prev = newNode;
+        }
+        this.length--;
+        return value;
+    }
 }
-
 
 function test() {
     let myDLL = new DoublyLinkedList(2);
@@ -110,12 +122,9 @@ function test() {
 
     console.log("\nDoubly Linked List:");
     myDLL.printList();
-    
 }
 
-
 test();
-
 
 /*
     EXPECTED OUTPUT:
