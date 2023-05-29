@@ -55,8 +55,6 @@ class DoublyLinkedList {
         if (this.length === 0) {
             this.head = newNode;
             this.tail = newNode;
-            newNode.next = null;
-            newNode.prev = null;
         } else {
             // place holder for tail
             // then have current tail next point to new node
