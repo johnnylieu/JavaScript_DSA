@@ -23,3 +23,7 @@ https://youtu.be/vdszFUOLN3g
 ## Linked List Reverse Exercise
 
 https://youtu.be/rAU-CcrMSGE
+
+## Double Linked List Push Exercise
+
+https://youtu.be/O_nBxzSJrtQ
