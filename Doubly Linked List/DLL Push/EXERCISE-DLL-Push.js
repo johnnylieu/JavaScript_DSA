@@ -68,7 +68,7 @@ class DoublyLinkedList {
             newNode.prev = temp;
         }
         this.length++;
-        return value;
+        return this;
     }
 }
 
