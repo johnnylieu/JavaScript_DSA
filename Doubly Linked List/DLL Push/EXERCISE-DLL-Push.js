@@ -49,13 +49,19 @@ class DoublyLinkedList {
     }
 
     push(value) {
+        // creates a new node
         const newNode = new Node(value);
+        // if length is - then make the head and tail point to the new node
         if (this.length === 0) {
             this.head = newNode;
             this.tail = newNode;
             newNode.next = null;
             newNode.prev = null;
         } else {
+            // place holder for tail
+            // then have current tail next point to new node
+            // then have current tail point to new node
+            // then have new node prev point to temp
             let temp = this.tail;
             this.tail.next = newNode;
             this.tail = newNode;
