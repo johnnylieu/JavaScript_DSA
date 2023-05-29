@@ -148,12 +148,19 @@ class LinkedList {
         return temp;
     }
 
-    /// WRITE REVERSE METHOD HERE ///
-    //                             //
-    //                             //
-    //                             //
-    //                             //
-    /////////////////////////////////
+    reverse() {
+        let temp = this.head;
+        this.head = this.tail;
+        this.tail = temp;
+        let prev = null;
+
+        for (let i = 0; i < this.length; i++) {
+            let next = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp = next;
+        }
+    }
 }
 
 function test() {
