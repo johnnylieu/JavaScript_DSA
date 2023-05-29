@@ -19,3 +19,7 @@ https://youtu.be/l2dnbme61Jc
 ## Linked List Shift Exercise
 
 https://youtu.be/vdszFUOLN3g
+
+## Linked List Reverse Exercise
+
+https://youtu.be/rAU-CcrMSGE
