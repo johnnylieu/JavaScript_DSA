@@ -1,11 +1,11 @@
 class Node {
-    constructor(value){
+    constructor(value) {
         this.value = value;
         this.next = null;
         this.prev = null;
     }
 }
- 
+
 class DoublyLinkedList {
     constructor(value) {
         const newNode = new Node(value);
@@ -47,17 +47,25 @@ class DoublyLinkedList {
         this.tail = null;
         this.length = 0;
     }
- 
-	/// WRITE PUSH METHOD HERE ///
-	//                          //
-	//                          //
-	//                          //
-	//                          //
-	//////////////////////////////
 
- }
+    push(value) {
+        const newNode = new Node(value);
+        if (this.length === 0) {
+            this.head = newNode;
+            this.tail = newNode;
+            newNode.next = null;
+            newNode.prev = null;
+        } else {
+            let temp = this.tail;
+            this.tail.next = newNode;
+            this.tail = newNode;
+            newNode.prev = temp;
+        }
+        this.length++;
+        return value;
+    }
+}
 
- 
 function test() {
     let myDLL = new DoublyLinkedList(1);
     myDLL.push(2);
@@ -70,9 +78,7 @@ function test() {
     myDLL.printList();
 }
 
-
 test();
-
 
 /*
         EXPECTED OUTPUT:
