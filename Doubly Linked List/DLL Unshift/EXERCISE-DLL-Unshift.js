@@ -94,7 +94,7 @@ class DoublyLinkedList {
             // pointing the old node's prev to the new node
             temp.prev = newNode;
         }
-        this.length--;
+        this.length++;
         return value;
     }
 }
