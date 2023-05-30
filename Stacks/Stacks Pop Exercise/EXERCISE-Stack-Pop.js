@@ -49,20 +49,19 @@ class Stack {
     }
 
     pop() {
+        let temp = this.top;
         if (!this.top) {
             return undefined;
         } else if (this.length === 1) {
             let temp = this.top;
-            this.length--;
             this.top = null;
-            return temp;
         } else {
             let temp = this.top;
             this.top = this.top.next;
             temp.next = null;
-            this.length--;
-            return temp;
         }
+        this.length--;
+        return temp;
     }
 }
 
