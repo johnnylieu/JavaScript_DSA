@@ -53,10 +53,8 @@ class Stack {
         if (!this.top) {
             return undefined;
         } else if (this.length === 1) {
-            let temp = this.top;
             this.top = null;
         } else {
-            let temp = this.top;
             this.top = this.top.next;
             temp.next = null;
         }
