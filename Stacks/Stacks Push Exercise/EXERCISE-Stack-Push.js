@@ -39,9 +39,15 @@ class Stack {
 
     push(value) {
         const newNode = new Node(value);
-        let temp = this.top;
-        this.top = newNode;
-        this.top.next = temp;
+        if (!this.top) {
+            this.top = newNode;
+        } else {
+            let temp = this.top;
+            this.top = newNode;
+            this.top.next = temp;
+        }
+        this.length++;
+        return this;
     }
 }
 
