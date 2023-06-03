@@ -4,14 +4,14 @@ class Node {
         this.next = null;
     }
 }
- 
+
 class Queue {
     constructor(value) {
         const newNode = new Node(value);
         this.first = newNode;
         this.last = newNode;
         this.length = 1;
-    } 
+    }
 
     printQueue() {
         let temp = this.first;
@@ -46,7 +46,7 @@ class Queue {
         this.last = null;
         this.length = 0;
     }
- 
+
     enqueue(value) {
         const newNode = new Node(value);
         if (this.length === 0) {
@@ -58,17 +58,27 @@ class Queue {
         }
         this.length++;
     }
- 
-	// WRITE DEQUEUE METHOD HERE //
-	//                           //
-	//                           //
-	//                           //
-	//                           //
-	///////////////////////////////
 
+    dequeue() {
+        // placeholder for the first node that we'll be removing
+        let temp = this.first;
+        // edge case if queue is empty
+        if (!this.first) {
+            return undefined;
+            // edge case if queue has only 1 node
+        } else if (this.length === 1) {
+            this.first = null;
+            this.last = null;
+        } else {
+            // fsecond node is not first node
+            this.first = this.first.next;
+            // first node is now removed because it's next property is null
+            temp.next = null;
+        }
+        this.length--;
+        return temp;
+    }
 }
- 
-
 
 function test() {
     let myQueue = new Queue(2);
@@ -96,9 +106,7 @@ function test() {
     }
 }
 
-
 test();
-
 
 /*
     EXPECTED OUTPUT:
