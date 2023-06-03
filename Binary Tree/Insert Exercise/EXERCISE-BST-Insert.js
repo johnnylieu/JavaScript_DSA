@@ -17,7 +17,9 @@ class BST {
             this.root = newNode;
             return this;
         }
+
         let temp = this.root;
+
         while (true) {
             if (newNode.value === temp.value) {
                 return undefined;
@@ -28,11 +30,13 @@ class BST {
                     temp.left = newNode;
                     return this;
                 }
+                temp = temp.left;
             } else if (newNode.value > temp.value) {
                 if (temp.right === null) {
                     temp.right = newNode;
                     return this;
                 }
+                temp = temp.right;
             }
         }
     }
