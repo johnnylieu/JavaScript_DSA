@@ -5,7 +5,7 @@ class Node {
         this.right = null;
     }
 }
- 
+
 class BST {
     constructor() {
         this.root = null;
@@ -30,22 +30,30 @@ class BST {
                 if (temp.right === null) {
                     temp.right = newNode;
                     return this;
-                } 
+                }
                 temp = temp.right;
             }
         }
     }
 
-	/// WRITE CONTAINS METHOD HERE ///
-	//                              //
-	//                              //
-	//                              //
-	//                              //
-	//////////////////////////////////
-      
+    contains(value) {
+        let temp = this.root;
+
+        while (temp) {
+            if (value < temp.value) {
+                temp = temp.left;
+            } else if (value > temp.value) {
+                temp = temp.right;
+            }
+
+            if (temp === null) {
+                return false;
+            } else if (value === temp.value) {
+                return true;
+            }
+        }
+    }
 }
-
-
 
 function test() {
     let myBST = new BST();
@@ -58,7 +66,6 @@ function test() {
     myBST.insert(52);
     myBST.insert(82);
 
-
     console.log("BST Contains 27:");
     console.log(myBST.contains(27));
 
@@ -66,9 +73,7 @@ function test() {
     console.log(myBST.contains(17));
 }
 
-
 test();
-
 
 /*
     EXPECTED OUTPUT:
